@@ -63,3 +63,27 @@ npm run dev
 ```
 
 The application will be available at `http://localhost:5173`
+
+
+
+## References / Documentations
+
+- ***Frontend Tech***
+  - [React](https://legacy.reactjs.org/)
+  - [React Router](https://reactrouter.com/)
+  - [Tailwind CSS](https://tailwindcss.com/)
+  - [Framer Motion](https://motion.dev/)
+
+* ***Backend Tech***
+  * [Node.js](https://nodejs.org/en)
+  * [Express.js](https://expressjs.com/)
+  * [MongoDB](https://www.mongodb.com/docs/)
+  * [Mongoose](https://mongoosejs.com/docs/)
+  * [Bcrypt](https://www.npmjs.com/package/bcrypt)
+  * [JWT](https://jwt.io/introduction/)
+  * [Multer](https://www.npmjs.com/package/multer)
+
+- ***Tools***
+  * [PostMan](https://www.postman.com/)
+
+---
