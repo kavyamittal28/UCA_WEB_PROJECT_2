@@ -11,11 +11,11 @@ const Profile = () => {
   const [hoveringNutrition, setHoveringNutrition] = useState(false);  // Tracks hover over nutrition section
   const [heightUnit, setHeightUnit] = useState('cm');
   const userId = localStorage.getItem('userId'); // Assuming userId is stored in localStorage
-
+  const URL  = import.meta.env.VITE_PUBLIC_URL;
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const response = await fetch(`/api/users/${userId}`);
+        const response = await fetch(`${URL}/api/users/${userId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch user information');
         }
