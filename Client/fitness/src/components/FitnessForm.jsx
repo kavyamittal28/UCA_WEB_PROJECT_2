@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios'; // Import axios for making HTTP requests
 import { useNavigate } from 'react-router-dom';
 import '../styles/FitnessForm.css';
+const URL  = import.meta.env.VITE_PUBLIC_URL;
 
 const FitnessForm = () => {
   const [step, setStep] = useState(1);
@@ -56,7 +57,8 @@ const FitnessForm = () => {
                      ((parseInt(formData.heightFt) * 12 + parseInt(formData.heightIn))*2.54).toFixed(2);
       const dataToSubmit = { ...formData, height }; // Include height in the form data
 
-      const response = await axios.post(`https://shred.onrender.com/api/users/${userId}`, dataToSubmit);
+      // const response = await axios.post(`https://shred.onrender.com/api/users/${userId}`, dataToSubmit);
+      const response = await axios.post(`${URL}/api/users/${userId}`, dataToSubmit);
 
       if (response.status === 200) {
         console.log('Form data successfully submitted:', response.data);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Exercise.css';
+const URL  = import.meta.env.VITE_PUBLIC_URL;
 
 const Exercise = () => {
   const [activeExercise, setActiveExercise] = useState(null);
@@ -12,7 +13,7 @@ const Exercise = () => {
     // Fetch user's exercises
     const fetchExercises = async () => {
       try {
-        const response = await fetch(`/api/users/${userId}/exercises`);
+        const response = await fetch(`${URL}/api/users/${userId}/exercises`);
         if (!response.ok) {
           throw new Error('Failed to fetch exercises');
         }
@@ -26,7 +27,7 @@ const Exercise = () => {
     // Fetch workout plan ID and details
     const fetchWorkoutPlanId = async () => {
       try {
-        const response = await fetch(`/api/workout-plans`, {
+        const response = await fetch(`${URL}/api/workout-plans`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -59,7 +60,7 @@ const Exercise = () => {
     // Fetch the workout plan details using the workout plan ID
     const fetchWorkoutPlan = async (workoutPlanId) => {
       try {
-        const response = await fetch(`/api/workout-plans/${workoutPlanId}`);
+        const response = await fetch(`${URL}/api/workout-plans/${workoutPlanId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch workout plan');
         }

@@ -3,6 +3,8 @@ import axios from 'axios';
 import '../styles/Register.css';
 import { Link, useNavigate } from 'react-router-dom';
 
+const URL  = import.meta.env.VITE_PUBLIC_URL;
+
 const Register = () => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
@@ -19,7 +21,8 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('https://shred.onrender.com/api/users', {
+      // const response = await axios.post('https://shred.onrender.com/api/users', {
+      const response = await axios.post(`${URL}/api/users`, {
         name,
         email,
         password

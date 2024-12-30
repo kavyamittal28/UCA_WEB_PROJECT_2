@@ -3,6 +3,7 @@ import '../styles/Login.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+const URL  = import.meta.env.VITE_PUBLIC_URL;
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,7 +15,8 @@ const Login = () => {
 
     try {
       // Make the API call
-      const response = await axios.post('https://shred.onrender.com/api/login', {
+      // const response = await axios.post('https://shred.onrender.com/api/login', {
+      const response = await axios.post(`${URL}/api/login`, {
         email,
         password
       });
